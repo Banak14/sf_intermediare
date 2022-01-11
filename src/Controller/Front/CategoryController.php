@@ -10,10 +10,12 @@ class CategoryController extends AbstractController
 {
 
     
-     #[Route("categories", name: "category_list")]
+     #[Route("/categories", name: "category_list")]
     public function categoryList(CategoryRepository $categoryRepository)
     {
         $categories = $categoryRepository->findAll();
+        //var_dump($categories);
+        //die; 
 
         return $this->render("front/categories.html.twig", ['categories' => $categories]);
     }
