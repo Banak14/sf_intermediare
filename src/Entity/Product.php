@@ -23,10 +23,13 @@ class Product
     private $stock;
 
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'products')]
+    #[ORM\JoinColumn(onDelete:"CASCADE")]
     private $category;
 
     #[ORM\ManyToOne(targetEntity: Brand::class, inversedBy: 'products')]
+    #[ORM\JoinColumn(onDelete:"CASCADE")]
     private $brand;
+    #[ORM\OneToMany(targetEntity:Media::class, mappedBy:"product")]
 
     public function getId(): ?int
     {
@@ -92,4 +95,5 @@ class Product
 
         return $this;
     }
+    
 }
