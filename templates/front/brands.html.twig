@@ -2,10 +2,14 @@
 
 {% block body %}
 
-    {% for brand in brands %}
+    <h1>{{ front }}</h1>
 
-        <h2><a href="{{ path("brand_show",{'id' : brand.id } ) }}">{{ brand.name }}</a></h2>
-    
-    {% endfor %}
+	{% for brand in brands %}
+
+		<img src="{{ asset('media/' ~ brand.media) }}" alt="{{ brand.name }}">
+		<h2>
+			<a href="{{ path('brand_show', {'id' : brand.id}) }}">{{ brand.name }}</a>
+		</h2>
+	{% endfor %}
 
 {% endblock %}

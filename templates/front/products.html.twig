@@ -1,12 +1,15 @@
 {% extends "front/base.html.twig" %}
 
-{% block body %}
+{% block main %}
 
-    {% for product in products %}
-        <img src="{{ asset('media/' ~ product.media[0].src) }}" alt="{{product.media[0].alt}}">
+    <h1>{{ front }}</h1>
 
-        <h2><a href="{{ path("product_show",{'id' : product.id } ) }}">{{ product.name }}</a></h2>
-    
-    {% endfor %}
+	{% for image in product.media %}
+
+		<img src="{{ asset('media/' ~ image.src) }}" alt="{{ image.alt }}">
+
+	{% endfor %}
+	<h2>{{ product.name }}</h2>
+	<h3>{{ product.price }}</h3>
 
 {% endblock %}

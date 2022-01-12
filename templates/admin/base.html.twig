@@ -14,6 +14,18 @@
         {% endblock %}
     </head>
     <body>
+        {% for grpoduct in gproducts.getAll %}
+			<h3>{{ grpoduct.name }}</h3>
+		{% endfor %}
+        {% for gbrand in gbrands.getAll %}
+			<h2>{{ gbrand.name }}</h2>
+		{% endfor %}
+
+		{% for gproduct in gproducts.getAll %}
+			<h3>{{ gproduct.name }}</h3>
+		{% endfor %}
+
+	
         {% block body %}{% endblock %}
     </body>
 </html>

@@ -1,9 +1,12 @@
 {% extends "admin/base.html.twig" %}
 
-{% block body %}
+{% block main %}
+
+    <h1>{{ admin }}</h1>
 
 	{% for brand in brands %}
 
+		<img src="{{ asset('media/' ~ brand.media) }}" alt="{{ brand.name }}">
 		<h2>
 			<a href="{{ path("admin_brand_show", {'id' : brand.id } ) }}">
 				{{ brand.name }}
