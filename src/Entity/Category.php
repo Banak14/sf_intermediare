@@ -87,4 +87,15 @@ class Category
 
         return $this;
     }
+    public function getMedia(): ?string
+    {
+        return $this->media;
+    }
+
+    public function setMedia(string $media): self
+    {
+        $this->media = $media;
+
+        return $this;
+    }
 }

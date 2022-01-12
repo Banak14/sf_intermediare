@@ -15,6 +15,9 @@ class BrandType extends AbstractType
         $builder
             ->add('name')
             ->add('description')
+            ->add('media', FileType::class, [
+                'mapped' => false
+            ])
             ->add('Enregistrer', SubmitType::class)
         ;
     }
